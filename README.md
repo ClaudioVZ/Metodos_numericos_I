@@ -6,14 +6,16 @@ Intérprete: IPython
 
 Sistema operativo: Multiplataforma
 
-1. Raices de ecuaciones de una variable 
-  * Método de la bisección
-  * Método de la falsa posición
-  * Método de la falsa posición modificada
-  * Método del punto fijo
-  * Método de Newton-Rahpson
-  * Método de la secante
-  * Método de la secante modificada
+1. Raices de ecuaciones de una variable
+  * Métodos cerrados
+    * Método de la bisección
+    * Método de la falsa posición
+    * Método de la falsa posición modificada
+  * Métodos abiertos
+    * Método del punto fijo
+    * Método de Newton-Rahpson
+    * Método de la secante
+    * Método de la secante modificada
 2. Sistemas de ecuaciones lineales
   * Operaciones con matrices
   * Métodos directos
