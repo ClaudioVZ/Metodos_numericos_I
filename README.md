@@ -39,3 +39,8 @@ Sistema operativo: Multiplataforma
   * Diferencias finitas
   * Extrapolación de Richardson
   * Coeficientes indeterminados
+5. Integración
+  * Regla del trapecio
+  * Regla de Simpson 1/3
+  * Regla de Simpson 3/8
+  * Regla de Boole
