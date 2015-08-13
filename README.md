@@ -1,1 +1,1 @@
-# Métodos numericos I
+# Métodos numéricos I
