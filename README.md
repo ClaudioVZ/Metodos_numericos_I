@@ -1,6 +1,6 @@
 # Métodos numéricos I
 
-Lenguaje: Python
+Lenguaje: Python3
 
 Intérprete: IPython
 
