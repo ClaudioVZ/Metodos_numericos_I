@@ -24,23 +24,48 @@ Sistema operativo: Multiplataforma
     * Eliminación de Gauss
     * Eliminación hacia atrás revisitado
     * Factorización LU
-    * Factorización de Doolittle revisitado
-    * Factorización de Crout revisitado
+      * Algoritmo de Doolittle
+      * Algoritmo de Crout
+    * Algoritmo de Doolittle revisitado
+    * Algoritmo de Crout revisitado
     * Factorización de Cholesky
+      * Algoritmo de Cholesky-Banachiewicz
+      * Algoritmo de Cholesky-Crout
   * Métodos iterativos
     * Método de Gauss-Jacobi
     * Método de Gauss-Seidel
     * Métodos de relajación
-    * Método de Gauss-Jacobi ponderado
-    * Método SOR
+      * Método de Gauss-Jacobi ponderado
+      * Método SOR
 3. Interpolación
   * Diferencias divididas de Newton
 4. Diferenciación
   * Diferencias finitas
+    * Nodos desigualmente espaciados
+      * Serie de Taylor
+      * Polinomio de Lagrange
+      * Método de los coeficientes indeterminados
+    * Nodos igualmente espaciados
+      * Serie de Taylor
+      * Polinomio de Lagrange
+      * Método de los coeficientes indeterminados 
   * Extrapolación de Richardson
-  * Coeficientes indeterminados
 5. Integración
-  * Regla del trapecio
-  * Regla de Simpson 1/3
-  * Regla de Simpson 3/8
-  * Regla de Boole
+  * Fórmulas cerradas de Newton-Cotes
+    * Nodos desigualmente espaciados 
+      * Polinomio de Lagrange 
+        * Regla del trapecio
+        * Regla de Simpson 1/3
+        * Regla de Simpson 3/8
+        * Regla de Boole
+      * Método de los coeficientes indeterminados 
+    * Nodos igualmente espaciados 
+      * Polinomio de Lagrange 
+        * Regla del trapecio
+        * Regla de Simpson 1/3
+        * Regla de Simpson 3/8
+        * Regla de Boole
+      * Método de los coeficientes indeterminados 
+6. Valores propios
+  * Método de Leverrier-Faddeev
+  * Método de Leverrier-Faddeev (algoritmo alterno)

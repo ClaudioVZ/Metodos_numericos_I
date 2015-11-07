@@ -1,0 +1,98 @@
+%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+
+def grafico(f, x_l, x_u):
+    x_r = raiz(f, x_l, x_u)
+    
+    plt.figure(figsize=(20, 10), dpi=100)
+    x_min = x_l - abs(x_l - x_r)
+    x_max = x_u + abs(x_l - x_r)
+    plt.xlim(x_min, x_max)
+    x = np.linspace(x_min, x_max, 200)
+    
+    y = np.sin(10*x) + np.cos(3*x)
+    y_min = np.amax(y)
+    y_max = np.amin(y)
+    plt.ylim(y_min,y_max)
+    
+    x0 = np.array([x_min, x_max])
+    y0 = np.array([0, 0])
+    x1 = np.array([x_l, x_l])
+    y1 = np.array([y_min, y_max])
+    x2 = np.array([x_u, x_u])
+    y2 = np.array([y_min, y_max])
+    
+    plt.plot(x,y)
+    plt.plot(x0, y0, 'k')
+    plt.plot(x1, y1, 'r')
+    plt.plot(x2, y2, 'r')
+    
+    if f(x_l)*f(x_r) < 0:
+        x_u = x_r
+    if f(x_l)*f(x_r) > 0:
+        x_l = x_r
+        
+    x3 = np.array([x_l, x_u])
+    y3 = np.array([f(x_l), f(x_u)])
+    plt.plot(x3, y3, 'r')
+    plt.axvspan(x_l, x_u, alpha=0.5, color='green')
+    plt.show()
+    
+def raiz(f, x_l, x_u):
+    x_r = x_u - (f(x_u)*(x_u - x_l))/(f(x_u) - f(x_l))
+    return x_r
+
+def intervalo_de_raiz(f, x_l, x_u):
+    grafico(f, x_l, x_u)
+    x_r = raiz(f, x_l, x_u)
+    if f(x_l)*f(x_r) < 0:
+        x_u = x_r
+    if f(x_l)*f(x_r) > 0:
+        x_l = x_r
+    return x_l, x_u
+
+def falsa_posicion_grafico(f, x_inferior, x_superior):
+    x_raiz_actual = raiz(f, x_inferior, x_superior)
+    i = 0
+    error_permitido = 1
+    
+    plt.figure(figsize=(20, 10), dpi=100)
+    x_min = x_inferior - abs(x_inferior - x_raiz_actual)
+    x_max = x_superior + abs(x_inferior - x_raiz_actual)
+    plt.xlim(x_min, x_max)
+    x = np.linspace(x_min, x_max, 200)
+    y = np.sin(10*x) + np.cos(3*x)
+    y_min = np.amax(y)
+    y_max = np.amin(y)
+    plt.ylim(y_min,y_max)
+    x0 = np.array([x_min, x_max])
+    y0 = np.array([0, 0])
+    x1 = np.array([x_inferior, x_inferior])
+    y1 = np.array([y_min, y_max])
+    x2 = np.array([x_superior, x_superior])
+    y2 = np.array([y_min, y_max])
+    x3 = np.array([x_inferior, x_superior])
+    y3 = np.array([f(x_inferior), f(x_superior)])
+    plt.plot(x,y)
+    plt.plot(x0, y0, 'k')
+    plt.plot(x1, y1, 'r')
+    plt.plot(x2, y2, 'r')
+    plt.plot(x3, y3, 'r')
+    plt.axvspan(x_inferior, x_superior, alpha=0.5, color='green')
+    plt.show()
+    print('x inferior', x_inferior)
+    print('raiz =', x_raiz_actual)
+    print('x superior', x_superior)
+    while True:
+        x_raiz_anterior = x_raiz_actual
+        x_inferior, x_superior = intervalo_de_raiz(f, x_inferior, x_superior)
+        x_raiz_actual = raiz(f, x_inferior, x_superior)
+        print('x inferior', x_inferior)
+        print('raiz =', x_raiz_actual)
+        print('x superior', x_superior)
+        if x_raiz_actual != 0:
+            error_relativo = abs((x_raiz_actual - x_raiz_anterior)/x_raiz_actual)*100
+        i = i + 1
+        if (error_relativo < error_permitido) or (i>=20):
+            break
