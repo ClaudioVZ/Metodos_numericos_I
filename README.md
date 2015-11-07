@@ -2,7 +2,7 @@
 
 Lenguaje: Python3
 
-Intérprete: IPython
+Intérprete: IPython/Jupyter
 
 Sistema operativo: Multiplataforma
 
